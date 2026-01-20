@@ -1,0 +1,4 @@
+AuthName "Dialog prompt"
+AuthType Basic
+AuthUserFile /home/perlocka/.htpasswd
+Require valid-user

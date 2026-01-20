@@ -1,0 +1,9 @@
+body {
+    background-image: url("images\\bird.png");
+    background-size: 2.5%;
+    background-color: deeppink;
+}
+
+img {
+    float: left;
+}
