@@ -6,13 +6,24 @@ Global Style Sheet
 :root {
     --bg-colour: #f0f0f0;
     --fg-colour: #191919;
+
+    --h-colour: #3B3B3B;
+    --f-colour: #2A2A2A;
+
+    --href-colour: blue;
+    --nav-colour: cadetblue;
 }
 
 :root:has(#darkMode:checked) {
-    --bg-colour: #191919;
+    --bg-colour: #3B3B3B;
     --fg-colour: #f0f0f0;
-}
 
+    --h-colour: #2A2A2A;
+    --f-colour: #191919;
+
+    --href-colour: cornflowerblue;
+    --nav-colour: darkcyan;
+}
 
 * {
     margin: 0;
@@ -24,6 +35,10 @@ Global Style Sheet
 body {
     background-color: var(--bg-colour);
     color: var(--fg-colour)
+}
+
+a {
+    color: var(--href-colour);
 }
 
 #content {
@@ -49,12 +64,12 @@ footer {
 
 /* Background colors */
 footer {
-    background-color: #2A2A2A;
+    background-color: var(--f-colour);
 }
 #contact,
 header,
 nav {
-    background-color: #3B3B3B;
+    background-color: var(--h-colour);
 }
 /*  */
 
@@ -75,8 +90,12 @@ footer {
 
 #contact a,
 nav a {
-    color: cadetblue;
+    color: var(--nav-colour);
     width: 30%;
+}
+
+#social img {
+    width: 100%;
 }
 
 #contact,
