@@ -3,6 +3,8 @@ Alexander Perlock
 
 Global Style Sheet
 */
+
+/* Light v. Dark mode colouring */
 :root {
     --bg-colour: #f0f0f0;
     --fg-colour: #191919;
@@ -13,8 +15,7 @@ Global Style Sheet
     --href-colour: blue;
     --nav-colour: cadetblue;
 }
-
-:root:has(#darkMode:checked) {
+[data-theme="dark"] {
     --bg-colour: #3B3B3B;
     --fg-colour: #f0f0f0;
 
@@ -32,6 +33,7 @@ Global Style Sheet
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* Colors */
 body {
     background-color: var(--bg-colour);
     color: var(--fg-colour)
@@ -39,6 +41,20 @@ body {
 
 a {
     color: var(--href-colour);
+}
+
+footer {
+    background-color: var(--f-colour);
+}
+#contact,
+header, header p,
+nav {
+    background-color: var(--h-colour);
+}
+/*  */
+
+header {
+    align-items: center;
 }
 
 #content {
@@ -54,24 +70,13 @@ a {
 }
 
 #contact,
-header,
+header, 
 nav,
 footer {
     padding: 2%;
     color: white;
     text-align: center;
 }
-
-/* Background colors */
-footer {
-    background-color: var(--f-colour);
-}
-#contact,
-header,
-nav {
-    background-color: var(--h-colour);
-}
-/*  */
 
 /* Font size */
 header {
@@ -98,6 +103,11 @@ nav a {
     width: 100%;
 }
 
+nav {
+    position: sticky;
+    top: 0%;
+}
+
 #contact,
 nav,
 #social {
@@ -118,8 +128,8 @@ nav,
     padding: 2.5%;
 }
 #content p {
-    margin-top: 1%;
-    margin-bottom: 1%;
+    /* padding-top: 1%; */
+    padding-bottom: 1%;
 }
 
 #content ul {
@@ -139,6 +149,18 @@ nav,
         color: red;
         background-color: maroon;
     } */
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto; 
+    }
+    /* #theme {
+    position: fixed;
+    top:0.8%;
+    right:1.6%;
+    } */
+    #theme img {
+    width: clamp(16px, 2vw, 24px);
+}
 
 
 }
@@ -150,6 +172,18 @@ nav,
         color: cyan;
         background-color: darkgreen;
     } */
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto; 
+    }
+    /* #theme {
+    position: fixed;
+    top:0.8%;
+    right:1.6%;
+    } */
+    #theme img {
+    width: clamp(16px, 2vw, 24px)
+}
 }
 
 /* PC */
@@ -167,6 +201,18 @@ nav,
         /* border: 1px, solid, black; */
         margin-left: 1%;
         margin-right: 1%;
-        max-width: 50%;
+        align-items: center;
+        justify-content: right;
+        width: 50%;
+    }
+
+    #theme {
+        position: fixed;
+        top: 0.8%;
+        right: 1.6%;
+        /* z-index: 1; */
+    }
+    #theme img {
+        width: clamp(16px, 2.5vw, 32px)
     }
 }
