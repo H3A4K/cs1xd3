@@ -132,7 +132,7 @@ nav,
     padding-bottom: 1%;
 }
 
-#content ul {
+#content ul, #content ol {
     padding-left: 3%
 }
 
@@ -140,6 +140,17 @@ nav,
     /* margin-left: 3%; */
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+.grid {
+    border: 1px, solid, var(--fg-colour);
+    border-radius: 5%;
+    padding: 1%;
+}
+
+.grid ol, .grid ul {
+    /* margin-left: 5%; */
+    padding: 0;
 }
 
 /* Phone*/
@@ -195,6 +206,9 @@ nav,
     } */
     #content {
         display: flex;
+        flex-wrap: wrap;
+        /* grid-template-columns: 2; */
+        /* gap: 2%; */
         /* padding: 0%; */
     }
     #content div {
@@ -203,7 +217,7 @@ nav,
         margin-right: 1%;
         align-items: center;
         justify-content: right;
-        width: 50%;
+        width: 48%;
     }
 
     #theme {
