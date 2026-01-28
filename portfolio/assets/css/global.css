@@ -4,27 +4,7 @@ Alexander Perlock
 Global Style Sheet
 */
 
-/* Light v. Dark mode colouring */
-:root {
-    --bg-colour: #f0f0f0;
-    --fg-colour: #191919;
-
-    --h-colour: #3B3B3B;
-    --f-colour: #2A2A2A;
-
-    --href-colour: blue;
-    --nav-colour: cadetblue;
-}
-[data-theme="dark"] {
-    --bg-colour: #3B3B3B;
-    --fg-colour: #f0f0f0;
-
-    --h-colour: #2A2A2A;
-    --f-colour: #191919;
-
-    --href-colour: cornflowerblue;
-    --nav-colour: darkcyan;
-}
+@import "theme.css";
 
 * {
     margin: 0;
@@ -50,6 +30,9 @@ footer {
 header, header p,
 nav {
     background-color: var(--h-colour);
+}
+nav a {
+    color: var(--nav-colour);
 }
 /*  */
 
@@ -93,9 +76,7 @@ footer {
 }
 /*  */
 
-#contact a,
 nav a {
-    color: var(--nav-colour);
     width: 30%;
 }
 
@@ -169,9 +150,6 @@ nav,
     top:0.8%;
     right:1.6%;
     } */
-    #theme img {
-    width: clamp(16px, 2vw, 24px);
-}
 
 
 }
@@ -192,9 +170,6 @@ nav,
     top:0.8%;
     right:1.6%;
     } */
-    #theme img {
-    width: clamp(16px, 2vw, 24px)
-}
 }
 
 /* PC */
@@ -218,15 +193,5 @@ nav,
         align-items: center;
         justify-content: right;
         width: 48%;
-    }
-
-    #theme {
-        position: fixed;
-        top: 0.8%;
-        right: 1.6%;
-        /* z-index: 1; */
-    }
-    #theme img {
-        width: clamp(16px, 2.5vw, 32px)
     }
 }
