@@ -17,6 +17,8 @@
 
 body {
     margin: 10px;
+    background-color: var(--bg-color);
+    color: var(--fg-color);
 }
 
 a {
@@ -42,20 +44,23 @@ a {
 
 
 /* Header */
+header {
+    margin-bottom: 1%;
+}
 header p {
     font-size: 32px;
     font-weight: bolder;
     text-align: center;
     padding-top: 1%;
     padding-bottom: 1%;
-    border-top: 2px solid black;  
-    border-bottom: 2px solid black;
+    border-top: 2px solid var(--fg-color);  
+    border-bottom: 2px solid var(--fg-color);
 }
 header .flex {
     justify-content: space-between;
 }
 header .flex li:not(:first-child) {
-    border-right: 1px solid black;
+    border-right: 1px solid var(--fg-color);
     width: 50%;
 }
 
@@ -90,6 +95,32 @@ footer .flex li {
 }
 footer .flex a {
     text-align: left;
+}
+
+/* Content */
+#content {
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#content div {
+    margin-bottom: 2.5%;
+}
+#content h1 {
+    font-size: medium;
+}
+#content p {
+    font-size: small;
+}
+#content img {
+    width: 75%;
+}
+
+#first {
+    width: 50%;
+}
+#second, #third {
+    width: 25%;
 }
 
 /* Mobile */
@@ -136,5 +167,9 @@ footer .flex a {
 @media (min-width:768px) {
     footer .flex li {
         border: none;
+    }
+
+    #content:last-child {
+        display: block;
     }
 }
