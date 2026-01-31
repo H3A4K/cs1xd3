@@ -11,6 +11,7 @@
     --bg-color: white;
     --fg-color: black;
     --href-color: black;
+    --f-bg-color: lightgrey;
 }
 /*  */
 
@@ -23,29 +24,19 @@ a {
     color: var(--href-color);
 }
 
-/* Nav Flex */
-nav ul {
+/* Flex */
+.flex {
     /* font-size: 12px; */
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    /* flex-flow: row wrap; */
     list-style-type: none;
 }
-nav a {
+.flex a {
     width: 100%;
     text-align: center;
-    position: relative;
     display: block;
 }
-.flex {
-    text-align: center;
-}
-.flex + .flex {
-    width: 50%;
-    border-right: 1px solid black;
-}
-.flex:last-child {
+.flex li:last-child {
     border-right: none;
 }
 
@@ -60,10 +51,50 @@ header p {
     border-top: 2px solid black;  
     border-bottom: 2px solid black;
 }
+header .flex {
+    justify-content: space-between;
+}
+header .flex li:not(:first-child) {
+    border-right: 1px solid black;
+    width: 50%;
+}
+
+/* Footer */
+footer {
+    background-color: var(--f-bg-color);
+    padding: 1%;
+    display: flex;
+}
+footer p {
+    font-weight: bold;
+    margin: 2%;
+    font-size: 14px;
+}
+footer ul {
+    margin-bottom: 4%;
+}
+footer .flex {
+    font-size: 12px;
+    display: block;
+}
+footer div {
+    width: 33%;
+}
+footer .flex li {
+    /* width: 33%; */
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-top: 1%;
+    text-align: left;
+    border-right: 1px solid black;
+}
+footer .flex a {
+    text-align: left;
+}
 
 /* Mobile */
 @media (max-width:480px) {
-    nav .flex:not(:first-child){
+    nav .flex li:not(:first-child){
         /* visibility: hidden; */
         display: none;
     }
@@ -77,6 +108,15 @@ header p {
         font-size: 24px;
         border: none;
     }
+    footer {
+        display: block;
+    }
+    footer div {
+        width: 100%;
+    }
+    footer .flex {
+        display: flex;
+    }
 }
 
 /* Tablet */
@@ -84,11 +124,17 @@ header p {
     #politics, #business, #arts {
         display: none;
     }
+    footer .flex li {
+        border: none;
+    }
+    footer .flex a {
+        text-align: left;
+    }
 }
 
 /* PC */
 @media (min-width:768px) {
-    nav {
-        margin:0
+    footer .flex li {
+        border: none;
     }
 }
