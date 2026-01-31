@@ -1,0 +1,32 @@
+.container {
+    max-width: 768px;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+img {
+    width: 80%;
+}
+
+.tile {
+    width: 150px;
+    background-color: lightyellow;
+    float: left;
+    padding: 10px;
+    margin: 10px;
+}
+
+.redcontainer {
+    max-width: 768px;
+    margin: auto;
+    border: 20px solid gray;
+    border-radius: 100px;
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+}
+
+#message {
+    cursor: pointer;
+}
