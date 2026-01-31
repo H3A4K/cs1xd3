@@ -156,8 +156,4 @@ footer .flex a {
     footer .flex li {
         border: none;
     }
-
-    #content:last-child {
-        display: block;
-    }
 }
