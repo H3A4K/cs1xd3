@@ -1,12 +1,16 @@
 /* 
  * Author: Alexander Perlock
+ * Date Modified : 31 01 '26
+ * 
+ * global formating
  */
 * {
     margin: 0;
     padding: 0;
+    /* font-family: ; */
 }
 
-/* colour */
+/* Colour */
 :root {
     --bg-color: white;
     --fg-color: black;
@@ -63,11 +67,15 @@ header .flex li:not(:first-child) {
     border-right: 1px solid var(--fg-color);
     width: 50%;
 }
+header .flex li:last-child {
+    border: none;
+}
 
 /* Footer */
 footer {
     background-color: var(--f-bg-color);
     padding: 1%;
+    margin-bottom: 2%;
     display: flex;
 }
 footer p {
@@ -97,34 +105,14 @@ footer .flex a {
     text-align: left;
 }
 
-/* Content */
-#content {
-    display: flex;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-#content div {
-    margin-bottom: 2.5%;
-}
-#content h1 {
-    font-size: medium;
-}
-#content p {
-    font-size: small;
-}
-#content img {
-    width: 75%;
-}
-
-#first {
-    width: 50%;
-}
-#second, #third {
-    width: 25%;
-}
-
 /* Mobile */
 @media (max-width:480px) {
+    /* * {
+        font-family: ;
+    }
+    :root {
+        colors
+    } */
     nav .flex li:not(:first-child){
         /* visibility: hidden; */
         display: none;

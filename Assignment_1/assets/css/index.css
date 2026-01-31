@@ -1,0 +1,31 @@
+/* 
+ * Author : Alexander Perlock
+ * Date Modified : 31 01 '26 
+ *
+ * index page formating
+ */
+
+#content {
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#content div {
+    margin-bottom: 2.5%;
+}
+#content h1 {
+    font-size: medium;
+}
+#content p {
+    font-size: small;
+}
+#content img {
+    width: 75%;
+}
+
+#first {
+    width: 50%;
+}
+#second, #third {
+    width: 25%;
+}
