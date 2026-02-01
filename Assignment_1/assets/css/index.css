@@ -1,8 +1,11 @@
 /* 
  * Author : Alexander Perlock
- * Date Modified : 31 01 '26 
+ * MACID : perlocka
  *
- * index page formating
+ * Date Created     : 31 01 '26
+ * Date Modified    : 31 01 '26
+ *
+ * Index page content formating
  */
 
 #content {
@@ -14,19 +17,23 @@
     margin-bottom: 2.5%;
 }
 #content h1 {
-    font-size: medium;
+    font-size: 20px;
 }
 #content p {
-    font-size: small;
+    font-size: 14px;    
 }
 #content img {
     width: 100%;
 }
 
+
 /* Mobile */
-@media (max-width:480px) {
+@media (max-width:479px) {
     #content {
         display: block;
+    }
+    #third {
+        display: none;
     }
 }
 
@@ -42,13 +49,12 @@
         width: 33%;
     }
     #third {
-        width: 25%;
         display: none;
     }
 }
 
 /* PC */
-@media (min-width:768px) {
+@media (min-width:769px) {
     #content div:not(:last-child) {
         margin-right: 1%;
     }

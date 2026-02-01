@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+Author : Alexander Perlock
+MACID : perlocka
+Date Created : 01 02 26
+Date Modified : 01 02 26
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #container {
+                position:absolute;
+                top:50px;
+                left:50px;
+                width:500px;
+                height:500px;
+                border: 10px solid black;
+                border-radius: 70px;
+            }
+            #moveme {
+                position: absolute;
+                top: "0px";
+                left: 0px;
+                width: 100px;
+                height: 100px;
+                background-color: green;
+                border-radius:100px;
+                border:10px solid black;
+            }
+        </style>
+        <script>
+            /**
+             * sets the position of the circle with id: moveme, on #container
+             * 
+             * @param {integer} top - the distance from the top of #container
+             * @param (integer) left - the distance from the left of #container
+             */
+            function set_pos(top, left) {
+                top = top < 0 ? 0 : top > b_top ? b_top : top;
+                left = left < 0 ? 0 : left > b_left ? b_left : left;
+
+                g_top = top;
+                g_left = left;
+                
+                const e = document.getElementById("moveme");
+                e.style.top = String(top) + "px";
+                e.style.left = String(left) + "px";
+            }
+
+            /**
+             * Adds to the current position of the #moveme element
+             * 
+             * @param (integer) top - the change in distance from the top of #container
+             * @param (integer) left - the change in distance from the left of #container
+             */
+            function add_pos(top, left) {
+                try {
+                    set_pos(g_top + top, g_left + left);
+                } catch (error) {
+                    set_pos(top, left);
+                }
+            }
+
+            /**
+             * Moves the #moveme element to a random position on the #container 
+             * iff the user agreed to move the circle
+             */
+            function move_random() {
+                let move = window.confirm("Do you want to move the circle?");
+                if (move) {
+                    set_pos(Math.floor(Math.random() * b_top), Math.floor(Math.random() * b_left));
+                }
+            }
+
+            /**
+             * Moves the #moveme element by 20px in the direction indicated by the user:
+             * U, D, L, R -> Up, Down, Left, Right
+             * Or does nothing if Q (Quit) is given
+             */
+            function move_direction() {
+                let ans = window.prompt("Which direction do you want the circle to move in? (U:Up, D:Down, L:Left, R:Right, Q:Quit)");
+                if (["Q", "q"].includes(ans)) {
+                    return
+                } else if (["U", "u"].includes(ans)) {
+                    add_pos(-20, 0);
+                } else if (["D", "d"].includes(ans)) {
+                    add_pos(20, 0);
+                } else if (["L", "l"].includes(ans)) {
+                    add_pos(0, -20);
+                } else if (["R", "r"].includes(ans)) {
+                    add_pos(0 , 20);
+                } else {
+                    return
+                }
+            }
+            
+            // Sets constant boundary values for the top and bottom of the page
+            // square of : 500px (#containter) - 20px (2 * border of #container) - 100px (#moveme)
+            const b_top = 380;
+            const b_left = 380;
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div id='moveme'></div>
+        </div>
+    </body>
+</html>
