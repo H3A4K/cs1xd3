@@ -1,0 +1,62 @@
+/* 
+ * Author : Alexander Perlock
+ * MACID : perlocka
+ * Date Created : 01 02 26
+ * Date Modified : 01 02 26
+ * 
+ * Standard content grid box items
+ */
+
+.grid {
+    list-style: none;
+}
+.grid > li {
+    margin: 1%;
+    padding: 1%;
+    border: 1px solid var(--fg-colour);
+    border-radius: 10px;
+}
+.grid a {
+    text-decoration: none;
+    color: var(--fg-colour);
+}
+.grid > li h1 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+.grid > li h2 {
+    font-size: 16px;
+    font-weight: lighter;
+    text-align: right;
+}
+.grid > li p {
+    font-size: 16px;
+}
+
+/* Phone */
+@media (max-width:479px) {
+
+}
+
+/* Tablet */
+@media (min-width:480px) and (max-width:767px) {
+    .grid {
+        display: flex;
+        flex-wrap:wrap;
+    }
+    .grid > li {
+        width : 48%;
+    }
+}
+
+/* PC */
+@media (min-width:768px) {
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .grid > li {
+        width : 31.33%;
+    }
+}

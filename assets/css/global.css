@@ -9,6 +9,7 @@
  */
 
 @import "theme.css";
+@import "grid.css";
 
 * {
     margin: 0;

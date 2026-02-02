@@ -7,11 +7,14 @@
  * Formatting for about.css
  */
 
-.grid {
+/* .grid {
     border: 1px, solid, var(--fg-colour);
     padding: 1%;
-}
+} */
 
+.grid > li li {
+    margin-left: 10%;
+}
 
 /* Phone */
 @media (max-width:479px) {
