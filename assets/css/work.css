@@ -28,36 +28,25 @@
     color: var(--fg-colour);
     background-color: var(--bg-colour);
 }
+#toggle:hover {
+    background-color: var(--hover-colour);
+}
+
+.grid li:hover {
+    background-color: var(--hover-colour);
+}
 
 /* Phone */
 @media (max-width:479px) {
-
+    
 }
 
 /* Tablet */
 @media (min-width:480px) and (max-width:767px) {
-    /* .grid {
-        display: flex;
-        flex-wrap:wrap;
-    }
-    .grid li {
-        width : 48%;
-    }     */
-    #toggle:hover {
-        background-color: var(--hover-colour);
-    }
+
 }
 
 /* PC */
 @media (min-width:768px) {
-    /* .grid {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .grid li {
-        width : 31.33%;
-    } */
-    #toggle:hover {
-        background-color: var(--hover-colour);
-    }
+
 }

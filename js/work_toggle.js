@@ -16,10 +16,10 @@ function toggle_direction() { // https://stackoverflow.com/questions/74510705/ho
     const items = document.querySelectorAll("#works li");
     const img = document.querySelector("#toggle img")
     if (rev) {
-        items.forEach((item, index, arr)=>item.style.order = arr.length - index);
+        items.forEach((item, index, arr) => item.style.order = arr.length - index);
         img.setAttribute("src", "./assets/imgs/arrows/up.png");
     } else {
-        items.forEach((item)=>item.style.order = "");
+        items.forEach((item) => item.style.order = "");
         img.setAttribute("src", "./assets/imgs/arrows/down.png");
     }
 }

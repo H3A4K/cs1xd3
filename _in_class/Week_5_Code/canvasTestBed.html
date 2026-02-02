@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas Test Bed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css">
+        #testCanvas {
+            background-color: silver;
+            margin: 30px;
+        }
+        body {
+            text-align: center;
+            color:silver;
+            background-color: rgb(53, 66, 29);
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            // get the drawing context
+            const c = document.getElementById("testCanvas");
+            const ctx = c.getContext("2d");
+            // your code here
+            ctx.fillStyle = "turquoise"
+            ctx.fillRect(50, 100, 200, 100);
+
+            ctx.fillStyle = "orange";
+            ctx.fillRect(80, 180, 100, 50);
+
+            ctx.fillStyle = "#654321";
+            ctx.fillRect(80, 60, 150, 75);
+
+            c.addEventListener("mousemove", function (event) {
+                let x = event.pageX - this.offsetLeft;
+                let y = event.pageY - this.offsetTop;
+                ctx.clearRect(0, 0, this.width, this.height)
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(x + 50, y + 50);
+                ctx.lineTo(x - 50, y + 50);
+                ctx.closePath();
+                ctx.fillStyle = "orange";
+                ctx.fill();
+                ctx.strokeStyle = "black";
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            });
+
+            document.getElementById("clear")
+                .addEventListener("click", () => {
+                    ctx.clearRect(0, 0, c.width, c.height);
+                });
+
+            // document.getElementById("polygon")
+            //     .addEventListener("click", () => {
+            //         ctx.beginPath();
+            //         ctx.moveTo(200, 200);
+            //         ctx.lineTo(250, 250);
+            //         ctx.lineTo(150, 250);
+            //         // ctx.lineTo(200, 200);
+            //         ctx.closePath();
+            //         ctx.fillStyle = "orange";
+            //         ctx.fill();
+            //         ctx.strokeStyle = "black";
+            //         ctx.lineWidth = 2;
+            //         ctx.stroke();
+            //     });
+            });
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Canvas Test Bed</h1>
+    <canvas id="testCanvas" width="400" height="400"></canvas>
+    <br>
+    <input type="button" value="Button 1">
+    <input id="clear" type="button" value="clear">
+    <input id="polygon" type="button" value="poly">
+    <input type="button" value="Button 4">
+</body>
+
+</html>
