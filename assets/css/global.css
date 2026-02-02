@@ -1,8 +1,12 @@
 /* 
-Alexander Perlock
-
-Global Style Sheet
-*/
+ * Author : Alexander Perlock
+ * MACID : perlocka
+ * Date Created : 20 01 26
+ * Date Modified : 01 02 26
+ * 
+ * Global changes across all pages
+ * Header, footer, etc. modified here
+ */
 
 @import "theme.css";
 
@@ -49,7 +53,6 @@ header {
 #content div {
     margin-left: 1%;
     margin-right: 1%;
-    /* border: 1px, solid, black; */
 }
 
 #contact,
@@ -109,34 +112,10 @@ nav,
     margin-right: 7.5%;
     padding: 2.5%;
 }
-#content p {
-    /* padding-top: 1%; */
-    padding-bottom: 1%;
-}
 
-#content ul, #content ol {
-    padding-left: 3%
-}
 
-#content li {
-    /* margin-left: 3%; */
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-.grid {
-    border: 1px, solid, var(--fg-colour);
-    border-radius: 5%;
-    padding: 1%;
-}
-
-.grid ol, .grid ul {
-    /* margin-left: 5%; */
-    padding: 0;
-}
-
-/* Phone*/
-@media (max-width:480px) {
+/* Phone */
+@media (max-width:479px) {
     /* Test boundries */
     /* * {
         color: red;
@@ -146,17 +125,10 @@ nav,
         display: grid;
         grid-template-columns: 1fr auto; 
     }
-    /* #theme {
-    position: fixed;
-    top:0.8%;
-    right:1.6%;
-    } */
-
-
 }
 
 /* Tablet */
-@media (min-width:480px) and (max-width:768px) {
+@media (min-width:480px) and (max-width:767px) {
     /* Test boundries */
     /* * {
         color: cyan;
@@ -166,11 +138,6 @@ nav,
         display: grid;
         grid-template-columns: 1fr auto; 
     }
-    /* #theme {
-    position: fixed;
-    top:0.8%;
-    right:1.6%;
-    } */
 }
 
 /* PC */
@@ -180,19 +147,4 @@ nav,
         color: blue;
         background-color: aqua;
     } */
-    #content {
-        display: flex;
-        flex-wrap: wrap;
-        /* grid-template-columns: 2; */
-        /* gap: 2%; */
-        /* padding: 0%; */
-    }
-    #content div {
-        /* border: 1px, solid, black; */
-        margin-left: 1%;
-        margin-right: 1%;
-        align-items: center;
-        justify-content: right;
-        width: 48%;
-    }
 }

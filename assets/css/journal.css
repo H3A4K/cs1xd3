@@ -1,0 +1,23 @@
+/* 
+ * Author : Alexander Perlock
+ * MACID : perlocka
+ * Date Created : 01 02 26
+ * Date Modified : 
+ *
+ * Formatting for journal.html
+ */
+
+/* Phone */
+@media (max-width:479px) {
+
+}
+
+/* Tablet */
+@media (min-width:480px) and (max-width:767px) {
+    
+}
+
+/* PC */
+@media (min-width:768px) {
+
+}

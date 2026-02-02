@@ -1,9 +1,11 @@
-/*
+/* 
  * Author : Alexander Perlock
- * Date Updated : 28 01 2026
+ * MACID : perlocka
+ * Date Created : 28 01 26
+ * Date Modified : 28 01 26
  * 
- * Style formating for all colouring based on theme
- * Icon formating
+ * Style formatting for all colouring based on theme
+ * Icon formatting
  */
 :root {
     --bg-colour: #f0f0f0;
@@ -14,6 +16,9 @@
 
     --href-colour: blue;
     --nav-colour: cadetblue;
+
+    --colour-invert: 0;
+    --hover-colour: #DFDFDF;
 }
 
 [data-theme="dark"] {
@@ -25,15 +30,18 @@
 
     --href-colour: cornflowerblue;
     --nav-colour: darkcyan;
+
+    --colour-invert: 1;
+    --hover-colour: #4C4C4C;
 }
 
-@media (max-width:480px) {
+@media (max-width:479px) {
     #theme img {
         width: clamp(16px, 2vw, 24px);
     }
 }
 
-@media (min-width:480px) and (max-width:768px) {
+@media (min-width:480px) and (max-width:767px) {
     #theme img {
         width: clamp(16px, 2vw, 24px)
     }

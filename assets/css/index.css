@@ -1,0 +1,46 @@
+/* 
+ * Author : Alexander Perlock
+ * MACID : perlocka
+ * Date Created : 01 02 26
+ * Date Modified : 01 02 26
+ */
+#content p {
+    /* padding-top: 1%; */
+    padding-bottom: 1%;
+}
+
+#content ul, #content ol {
+    padding-left: 3%
+}
+
+#content li {
+    /* margin-left: 3%; */
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+
+/* Phone */
+@media (max-width:479px) {
+
+}
+
+/* Tablet */
+@media (min-width:480px) and (max-width:767px) {
+    
+}
+
+/* PC */
+@media (min-width:768px) {
+    #content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #content div {
+        margin-left: 1%;
+        margin-right: 1%;
+        align-items: center;
+        justify-content: right;
+        width: 48%;
+    }
+}

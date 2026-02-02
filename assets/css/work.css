@@ -1,0 +1,91 @@
+/* 
+ * Author : Alexander Perlock
+ * MACID : perlocka
+ * Date Created : 01 02 26
+ * Date Modified : 01 02 26
+ *
+ * Formatting for work.html
+ */
+#works {
+    list-style: none;
+}
+#works li {
+    margin: 1%;
+    padding: 1%;
+    border: 1px solid var(--fg-colour);
+    border-radius: 10px;
+}
+#works a {
+    text-decoration: none;
+    color: var(--fg-colour);
+    
+}
+#works li h1 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+#works li h2 {
+    font-size: 16px;
+    font-weight: lighter;
+    text-align: right;
+}
+#works li p {
+    font-size: 16px;
+}
+
+#search {
+    width: 100%;
+    height: 5%;
+    margin-right: 1%;
+}
+#toggle {
+    height: 5%;
+    border: none;
+}
+#toggle img {
+    filter: invert(var(--colour-invert));
+    width: 100%;
+}
+#search {
+    border: 1px solid var(--fg-colour);
+    border-radius: 5px;
+}
+#toggle, #search {
+    padding: 0.5%;
+    color: var(--fg-colour);
+    background-color: var(--bg-colour);
+}
+
+/* Phone */
+@media (max-width:479px) {
+
+}
+
+/* Tablet */
+@media (min-width:480px) and (max-width:767px) {
+    #works {
+        display: flex;
+        flex-wrap:wrap;
+    }
+    #works li {
+        width : 48%;
+    }    
+    #toggle:hover {
+        background-color: var(--hover-colour);
+    }
+}
+
+/* PC */
+@media (min-width:768px) {
+    #works {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #works li {
+        width : 31.33%;
+    }
+    #toggle:hover {
+        background-color: var(--hover-colour);
+    }
+}
