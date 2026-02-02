@@ -3,6 +3,9 @@
  * MACID : perlocka
  * Date Created : 01 02 26
  * Date Modified : 01 02 26
+ * 
+ * Toggling direction of work items on work.html
+ * (TODO : Expand to be more general)
  */
 
 /**

@@ -3,7 +3,7 @@
  * MACID : perlocka
  *
  * Date Created     : 31 01 '26
- * Date Modified    : 31 01 '26
+ * Date Modified    : 01 02 '26
  * 
  * Global formating for header, footer, and general page setup
  */
@@ -15,10 +15,10 @@
 
 /* Colour */
 :root {
-    --bg-color: #EEEEEE;
+    --bg-color: #e0dac7;
     --fg-color: #303030;
     --href-color: var(--fg-color);
-    --f-bg-color: #D0D0D0;
+    --f-bg-color: #d0cab7;
 }
 /*  */
 
@@ -115,12 +115,12 @@ footer .flex a {
     * {
         font-family:'Courier New', Courier, monospace;
     }
-    /* :root {
-        --bg-color: #222222;
-        --fg-color: #FFFFFF;
+    :root {
+        --bg-color: #f0f0f0;
+        --fg-color: #303030;
         --href-color: var(--fg-color);
-        --f-bg-color: #000000;
-    } */
+        --f-bg-color: #D0D0D0;
+    }
 
     nav .flex li:not(:first-child){
         /* visibility: hidden; */

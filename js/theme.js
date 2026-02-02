@@ -1,5 +1,8 @@
 /**
- * Alexander Perlock
+ * Author : Alexander Perlock
+ * MACID : perlocka
+ * Date Created : 01 02 26
+ * Date Modified : 01 02 26
  * 
  * Managing swap between light and dark mode
  */
