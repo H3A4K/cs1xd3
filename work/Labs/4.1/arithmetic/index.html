@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+Author : Alexander Perlock
+MACID : perlocka
+
+Date Created     : 02 02 '26
+Date Modified    : 01 02 '26
+
+Index page for Chapter 16 exercises 1-3
+runs an arithmetic (+ / -) question generator in prompt/alert/confirm boxs
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 16.1</title>
+    <script defer>
+        function arithmetic() {
+            let cont = true;
+            while (cont) {
+                let var1 = Math.floor(Math.random() * 201) - 100;
+                let var2 = Math.floor(Math.random() * 201) - 100;
+
+                let ans = var1 + var2;
+
+                let user_ans = prompt(`What is ${var1} + ${var2}?`);
+
+                if (user_ans != ans) {
+                    alert(`Incorrect, ${var1} + ${var2} = ${ans}`)
+                } else {
+                    alert(`Correct, ${var1} + ${var2} = ${ans}`)
+                }
+
+                cont = confirm("Do you want to play again?");
+            }
+        }
+
+        arithmetic()
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>
