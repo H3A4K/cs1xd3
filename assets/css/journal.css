@@ -7,6 +7,10 @@
  * Formatting for journal.html
  */
 
+li {
+    margin-left: 2.5%;
+}
+
 /* Phone */
 @media (max-width:479px) {
 
