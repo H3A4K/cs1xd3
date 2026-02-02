@@ -19,6 +19,8 @@
 .grid a {
     text-decoration: none;
     color: var(--fg-colour);
+}
+.grid > li > a {
     width: 100%;
     height: 100%;
     display:block;
