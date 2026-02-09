@@ -1,0 +1,161 @@
+<!--
+Author : Alexander Perlock
+MACID : perlocka
+
+Date Created     : 09 02 26
+Date Modified    : 09 02 26
+
+Chapter 23 Exercise 3 of Textbook
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>House Draw-er</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css">
+        #testCanvas {
+            background-color: silver;
+            margin: 30px;
+        }
+
+        body {
+            text-align: center;
+            color: silver;
+            background-color: rgb(53, 66, 29);
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            const c = document.getElementById("testCanvas");
+            const ctx = c.getContext("2d");
+
+            let h_x = -50;
+            const items = {
+                houses: [],
+                cars: [],
+                stars: []
+            }
+
+            /**
+             * Generates a random hexadecimal color
+             * 
+             * @returns the color
+             */
+            function random_color() {
+                const rand = () => Math.floor(Math.random() * 255);
+                const to_hex = (decimal) => decimal < 16 ? "0" + decimal.toString(16) : decimal.toString(16);
+                const gen = () => to_hex(rand());
+                return "#" + gen() + gen() + gen();
+            }
+
+            /**
+             * Clears the screen and draws all elements
+             */
+            function redraw() {
+                ctx.clearRect(0, 0, c.width, c.height);
+                for (let i = 0; i < items.stars.length; i++) {
+                    draw(items.stars[i]);
+                }
+                for (let i = 0; i < items.houses.length; i++) {
+                    draw(items.houses[i]);
+                }
+                for (let i = 0; i < items.cars.length; i++) {
+                    draw(items.cars[i]);
+                }
+            }
+
+            /**
+             * draws the item given as input based on its type
+             * 
+             * @param items the item to be drawn
+             */
+            function draw(item) {
+                ctx.beginPath();
+                ctx.moveTo(item.xPos, item.yPos);
+                switch (item.type) {
+                    case "house":
+                        ctx.lineTo(item.xPos + 50, item.yPos);
+                        ctx.lineTo(item.xPos + 50, item.yPos + 50);
+                        ctx.lineTo(item.xPos, item.yPos + 50);
+                        break;
+                    case "car":
+                        ctx.lineTo(item.xPos + 20, item.yPos);
+                        ctx.lineTo(item.xPos + 10, item.yPos - 10);
+                        break;
+                    case "star":
+                        ctx.arc(item.xPos, item.yPos, 5, 0, 2 * Math.PI);
+                        break;
+                }
+                ctx.closePath();
+                ctx.fillStyle = item.color;
+                ctx.fill();
+            }
+
+
+            document.getElementById("Clear").addEventListener("click",
+                () => {
+                    items.houses = [];
+                    items.cars = [];
+                    items.stars = [];
+                    h_x = -50;
+                    redraw();
+                }
+            );
+
+            document.getElementById("House").addEventListener("click",
+                () => {
+                    h_x += 75;
+                    items.houses.push({
+                        xPos: h_x,
+                        yPos: c.height - 100,
+                        type: "house",
+                        color: "grey"
+                    });
+                    redraw();
+                });
+
+            document.getElementById("Car").addEventListener("click",
+                () => {
+                    if (items.houses.length == 0) {
+                        return;
+                    }
+                    let len_c = items.cars.length;
+                    if (len_c != 0 && items.cars[len_c - 1].xPos == h_x) {
+                        return;
+                    }
+                    items.cars.push({
+                        xPos: h_x,
+                        yPos: c.height - 25,
+                        type: "car",
+                        color: "red"
+                    });
+                    redraw();
+                });
+
+            document.getElementById("Star").addEventListener("click",
+                () => {
+                    items.stars.push({
+                        xPos: Math.floor(Math.random() * (c.width - 10)) + 5,
+                        yPos: Math.floor(Math.random() * (c.height / 2)) + 5,
+                        type: "star",
+                        color: random_color(),
+                    });
+                    redraw();
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>House Draw-er</h1>
+    <canvas id="testCanvas" width="400" height="400"></canvas>
+    <br>
+    <input id="Clear" type="button" value="Clear">
+    <input id="House" type="button" value="House">
+    <input id="Car" type="button" value="Car">
+    <input id="Star" type="button" value="Star">
+</body>
+
+</html>
