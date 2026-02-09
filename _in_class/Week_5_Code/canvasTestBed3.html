@@ -32,6 +32,44 @@
                 ctx.fillText("Key Up: " + event.keyCode, 150, 200)
                 ctx.fillText("Key Up: " + event.key, 150, 220)
             });
+
+            /*const*/ shape = {
+                x: 100, y: 100,
+                xSpeed: 0.1, ySpeed: 0,
+                yAccel: 0.01,
+                color: "royalblue", radius: 10
+            };
+
+            /*const*/ update = function () {
+                shape.x += shape.xSpeed;
+                shape.y += shape.ySpeed;
+                // shape.radius += 0.1;
+                shape.ySpeed += shape.yAccel;
+
+
+                ctx.clearRect(0, 0, c.width, c.height);
+
+                ctx.beginPath();
+                ctx.arc(shape.x, shape.y, shape.radius, 0, Math.PI * 2);
+                ctx.closePath(); 
+                ctx.fillStyle = shape.color;
+                ctx.fill();
+
+                if (shape.y > c.height - shape.radius) {
+                    shape.ySpeed *= -1;
+                }
+            }
+
+            let timerID = 0;
+            document.getElementById("startbutton").addEventListener(
+                "click", function (event) {
+                    timerID = setInterval(update, 1/60);
+            });
+
+            document.getElementById("stopbutton").addEventListener(
+                "click", function (event) {
+                    clearInterval(timerID);
+            });
         });
     </script>
 </head>
@@ -40,8 +78,8 @@
     <h1>Canvas Test Bed</h1>
     <canvas id="testCanvas" width="400" height="400"></canvas>
     <br>
-    <input type="button" value="Button 1">
-    <input type="button" value="Button 2">
+    <input id="startbutton" type="button" value="Start">
+    <input id="stopbutton" type="button" value="Stop">
     <input type="button" value="Button 3">
     <input type="button" value="Button 4">
 </body>
