@@ -54,8 +54,6 @@ class GuessingGame {
 }
 
 let upper = 100;
-let game;
-
 
 window.addEventListener("load", () => {
     document.getElementById("upperbound").innerHTML = upper;
@@ -80,5 +78,4 @@ window.addEventListener("load", () => {
         }
         game.save();
     });
-
 });
