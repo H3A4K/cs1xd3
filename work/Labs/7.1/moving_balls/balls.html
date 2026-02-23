@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+Author : Alexander Perlock
+MACID : perlocka
+
+Date Created     : 23 02 26
+Date Modified    : 23 02 26
+
+Template from :
+Example Canvas Animation with a Ball class
+Sam Scott, McMaster, 2024
+-->
+<html>
+
+<head>
+    <title>Example Canvas Animation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script>
+        class Ball {
+            constructor(x, y, xSpeed, ySpeed) {
+                this.x = x;
+                this.y = y;
+                this.xSpeed = xSpeed;
+                this.ySpeed = ySpeed;
+                this.red = 255;
+                this.green = 0;
+                this.blue = 0;
+                this.radius = 5;
+            }
+
+            setColor(red, green, blue) {
+                this.red = red;
+                this.green = green;
+                this.blue = blue;
+            }
+
+            moveOneStep() {
+                this.x += this.xSpeed;
+                this.y += this.ySpeed;
+            }
+
+            draw(ctx) {
+                ctx.fillStyle = "rgb(" + this.red + "," + this.green + "," + this.blue + ")";
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        // Following best practices, it's all inside a window load event
+        window.addEventListener("load", function (event) {
+            // global variables (global to this function, that is)
+            // to control the animation
+
+            // const ball = new Ball(350, 200, -1, -0.5);
+            // const ball2 = new Ball(350, 200, 1, -2);
+            // ball2.setColor(0, 0, 255);
+
+            const c = document.getElementById("animationCanvas");
+            const ctx = c.getContext("2d");
+
+            const balls = [];
+            for (i = 0; i < 500; i++) {
+                // places balls in middle quarter of the screen
+                let x = Math.floor(Math.random() * c.width / 2 + c.width / 4); 
+                let y = Math.floor(Math.random() * c.height / 2 + c.height / 4); 
+
+                let Vx = Math.random() * 2 - 1;
+                let Vy = Math.random() * 2 - 1;
+                ball = new Ball(x, y, Vx, Vy);
+                ball.setColor(Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256));
+                
+                balls.push(ball);
+            }
+            
+            let timerId;            // holds the id of the timer
+
+            // starts the animation
+            function startAnimation() {
+                // 16  milliseconds works out to 62.5 frames per second.
+                // for games, 60 frames per second is standard
+                timerId = setInterval(updateAnimation, 16);
+                console.log("Animation Started");
+                console.log(balls);
+            }
+
+            // stops the animation
+            function stopAnimation() {
+                clearTimeout(timerId);
+                console.log("Animation Stopped");
+            }
+
+            // This function is called every 16 milliseconds
+            function updateAnimation() {
+                // // 1. Update the position of the ball
+                // ball.moveOneStep();
+                // ball2.moveOneStep();
+
+                // // 2. Clear the canvas
+                // ctx.clearRect(0, 0, c.width, c.height);
+
+                // // 3. Draw the frame using information stored in ball
+                // ball.draw(ctx);
+                // ball2.draw(ctx);
+
+                // // 4. Collision detection: stop the animation if the ball is at the edge of the canvas
+                // if (ball.x >= c.width - ball.radius || ball.x <= 0 + ball.radius ||
+                //     ball.y >= c.height - ball.radius || ball.x <= 0 + ball.radius)
+                //     stopAnimation();
+
+                // Clear canvas
+                ctx.clearRect(0, 0, c.width, c.height);
+
+                for (i = 0; i < balls.length; i ++) {
+                    ball = balls[i]; // get relavent ball
+                    ball.moveOneStep(); // Update position on canvas
+                    ball.draw(ctx); // draw ball
+                    if (ball.x >= c.width - ball.radius || ball.x <= 0 + ball.radius ||
+                        ball.y >= c.height - ball.radius || ball.x <= 0 + ball.radius) {
+                            stopAnimation();
+                        }
+                }
+            }
+
+            // Start things up!
+            startAnimation();
+        });
+    </script>
+</head>
+
+<body style='text-align:center;'>
+    <canvas id='animationCanvas' width='768' height='400' style='background-color:black;'></canvas>
+</body>
+
+</html>
