@@ -16,7 +16,7 @@ class Reversible_Element {
      * @param {String} toggle_element_ID the ID of the toggle button element
      * @param {Array<String>} reversed_element_types the HTML element types that are to be included in reversing direction. If blank, will defalt to all elements
      */
-    constructor(parent_element_ID, toggle_element_ID, reversed_element_types) {
+    constructor(parent_element_ID, toggle_element_ID, reversed_element_types, start_as_reversed = false) {
         this.sub_elements = [];
         if (!reversed_element_types) {
             this.sub_elements = Array.from(document.getElementById(parent_element_ID).children);
@@ -41,6 +41,10 @@ class Reversible_Element {
 
         this.toggle_element.appendChild(this.toggle_img);
         this.reversed = false;
+
+        if (start_as_reversed) {
+            this.toggle_direction();
+        }
     }
 
     /**
