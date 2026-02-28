@@ -21,7 +21,8 @@ Work Page
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/work.css">
     <script defer src="./js/theme.js"></script>
-    <script defer src="./js/work_toggle.js"></script>
+    <script defer src="./js/reversible_element.js"></script>
+    <script defer src="./js/work.js"></script>
 </head>
 
 <body>
@@ -41,7 +42,8 @@ Work Page
         <div id="content">
             <div style="display: flex; align-items: center;">
                 <input type="text" placeholder="SEARCH BAR - TODO" id="search" disabled>
-                <button onclick="toggle_direction()" id="toggle"><img class="dark-invert" src="./assets/imgs/arrows/down.png"></button>
+                <div id="toggle"></div>
+                <!-- <button onclick="toggle_direction()" id="toggle"><img class="dark-invert" src="./assets/imgs/arrows/down.png"></button> -->
             </div>
             <ul id="works" class="grid">
                 <li><a href="./work/layout/index.html" target="_blank">
