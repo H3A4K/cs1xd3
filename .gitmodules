@@ -1,3 +1,6 @@
 [submodule "work/increments"]
 	path = work/increments
 	url = https://github.com/H3A4K/Clicker_Game.git
+[submodule "work/js_assignment"]
+	path = work/js_assignment
+	url = https://github.com/H3A4K/JS_Assignment.git
