@@ -188,7 +188,7 @@ class Work {
     "Incremental Game Assignment",
     "Duck clicker, similar to cookie clicker",
     new SimpleDate(28, 2, 2026),
-    "./work/clicker_game/index.html"
+    "./work/increments/index.html"
     );
 
     new Work(
