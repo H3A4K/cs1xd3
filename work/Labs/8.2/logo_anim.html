@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Team Splash Canvas Animation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="text/javascript">
+        window.addEventListener("load", function () {
+            const c = document.getElementById("animationCanvas");
+            const ctx = c.getContext("2d");
+            let timerId;
+
+            const orbitCenter = {
+                x: 500,
+                y: 200
+            };
+
+            const gooberText = {
+                x: -320,
+                y: 190,
+                speed: 3.5,
+                stopX: 40
+            };
+
+            const orbitDots = [
+                { angle: 0, radius: 78, size: 12, color: "#ffb703", speed: 0.04 },
+                { angle: 2.1, radius: 56, size: 9, color: "#8ecae6", speed: -0.05 },
+                { angle: 4.2, radius: 92, size: 10, color: "#fb8500", speed: 0.03 }
+            ];
+
+            const streaks = [
+                { x: 120, y: 70, length: 120, speed: 2.4 },
+                { x: 340, y: 335, length: 150, speed: 1.6 },
+                { x: 560, y: 92, length: 100, speed: 2.1 },
+                { x: 230, y: 32, length: 70, speed: 3.1 },
+                { x: 400, y: 360, length: 110, speed: 3.1 }
+            ];
+
+            function startAnimation() {
+                timerId = setInterval(updateAnimation, 16);
+            }
+
+            function stopAnimation() {
+                clearInterval(timerId);
+            }
+
+            function updateAnimation() {
+                for (let i = 0; i < orbitDots.length; i++) {
+                    orbitDots[i].angle += orbitDots[i].speed;
+                }
+                for (let i = 0; i < streaks.length; i++) {
+                    streaks[i].x += streaks[i].speed;
+                    if (streaks[i].x > c.width + 20) {
+                        streaks[i].x = -streaks[i].length;
+                    }
+                }
+
+                if (gooberText.x < gooberText.stopX) {
+                    gooberText.x += gooberText.speed;
+                    if (gooberText.x > gooberText.stopX)
+                        gooberText.x = gooberText.stopX;
+                }
+
+                drawFrame();
+            }
+
+            function drawFrame() {
+                drawBackground();
+                drawStreaks();
+                drawGooberDev();
+                drawOrbitGraphic();
+            }
+
+            function drawBackground() {
+                ctx.fillStyle = "#0d2d44";
+                ctx.fillRect(0, 0, c.width, c.height);
+            }
+
+            function drawStreaks() {
+                for (let i = 0; i < streaks.length; i++) {
+                    ctx.strokeStyle = "#ffffff";
+                    ctx.lineWidth = 3;
+                    ctx.beginPath();
+                    ctx.moveTo(streaks[i].x, streaks[i].y);
+                    ctx.lineTo(streaks[i].x + streaks[i].length, streaks[i].y);
+                    ctx.stroke();
+                }
+            }
+
+            function drawOrbitGraphic() {
+                ctx.strokeStyle = "#ffffff";
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.arc(orbitCenter.x, orbitCenter.y, 92, 0, Math.PI * 2);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(orbitCenter.x, orbitCenter.y, 56, 0, Math.PI * 2);
+                ctx.stroke();
+
+                ctx.fillStyle = "#e0fbfc";
+                ctx.beginPath();
+                ctx.arc(orbitCenter.x, orbitCenter.y, 28, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.fillStyle = "#0d2d44";
+                ctx.font = "bold 16px Georgia";
+                ctx.textAlign = "center";
+                ctx.fillText("GD", orbitCenter.x, orbitCenter.y + 6);
+
+                for (let i = 0; i < orbitDots.length; i++) {
+                    const dot = orbitDots[i];
+                    const dotX = orbitCenter.x + Math.cos(dot.angle) * dot.radius;
+                    const dotY = orbitCenter.y + Math.sin(dot.angle) * dot.radius;
+                    ctx.fillStyle = dot.color;
+                    ctx.beginPath();
+                    ctx.arc(dotX, dotY, dot.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function drawGooberDev() {
+                ctx.textAlign = "left";
+                ctx.fillStyle = "#ffffff";
+                ctx.font = "bold 28px Georgia";
+                ctx.fillText("The Goober", gooberText.x, gooberText.y - 25);
+                ctx.fillText("Development Group", gooberText.x, gooberText.y + 15);
+            }
+
+            
+
+            startAnimation();
+
+            window.addEventListener("beforeunload", stopAnimation);
+        });
+    </script>
+</head>
+
+<body style="margin:0; background-color:#04111c; display:flex; justify-content:center; align-items:center; min-height:100vh;">
+    <canvas id="animationCanvas" width="768" height="400" style="background-color:#061826; border:2px solid #17415c;"></canvas>
+</body>
+
+</html>
