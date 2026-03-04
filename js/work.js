@@ -191,6 +191,14 @@ class Work {
     "./work/increments/index.html"
     );
 
+
+    new Work(
+    "JS Assignment",
+    "Unknown Yet",
+    new SimpleDate(0, 0, 0),
+    "./work/js_assignment/index.html"
+    );
+
     new Work(
     "The Goober Development Group",
     "CS 1XD3 course team page",
