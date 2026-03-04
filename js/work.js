@@ -191,6 +191,20 @@ class Work {
     "./work/increments/index.html"
     );
 
+    new Work(
+    "Simple Animation Altering (Lab 8.2.1)",
+    "Small ball begins as black slowly becomes red, moves down and left, and shrinks in radius",
+    new SimpleDate(4, 3, 2026),
+    "./work/Labs/8.2/anim.html"
+    );
+
+    new Work(
+    "Team Logo Animation (Lab 8.2.2)",
+    "",
+    new SimpleDate(4, 3, 2026),
+    "./work/Labs/8.2/logo_anim.html"
+    );
+
 
     new Work(
     "JS Assignment",
