@@ -206,17 +206,17 @@ const items = [ // Work Items
     ),
 
     new Work(
-        "(Lab 9.1.1)",
-        "",
+        "Slot Machine (Lab 9.1.1)",
+        "Plays a 3 window slot machine game",
         new SimpleDate(9, 3, 26),
         "./work/Labs/9.1/slot/slot.php"
     ),
 
     new Work(
-        "(Lab 9.1.2)",
-        "",
+        "Tip Calculator (Lab 9.1.2)",
+        "A tip calcualtion form",
         new SimpleDate(9, 3, 26),
-        "./work/Labs/9.1/2/"
+        "./work/Labs/9.1/tip/tip_calc.php"
     ),
 
 

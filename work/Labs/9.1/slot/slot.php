@@ -2,10 +2,10 @@
 Author : Alexander Perlock
 MACID : perlocka
 
-Date Created     : 
-Date Modified    : 
+Date Created     : 09 03 26
+Date Modified    : 09 03 26
 
-What page is for
+Textbook exercise 31.4 
 -->
 <?php
 $img1 = 1;
