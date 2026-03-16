@@ -215,8 +215,22 @@ const items = [ // Work Items
     new Work(
         "Tip Calculator (Lab 9.1.2)",
         "A tip calcualtion form",
-        new SimpleDate(9, 3, 26),
+        new SimpleDate(10, 3, 26),
         "./work/Labs/9.1/tip/tip_calc.php"
+    ),
+
+    new Work(
+        "MySQL Commands (Lab 10.1.2)",
+        "A tip calcualtion form",
+        new SimpleDate(16, 3, 26),
+        "./work/Labs/10.1/mysql/commands.txt"
+    ),
+
+    new Work(
+        "Voting System (Lab 10.1.3)",
+        "A tip calcualtion form",
+        new SimpleDate(16, 3, 26),
+        "./work/Labs/10.1/voting/voting.php"
     ),
 
 
