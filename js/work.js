@@ -233,10 +233,9 @@ const items = [ // Work Items
         "./work/Labs/10.1/voting/voting.php"
     ),
 
-
     new Work(
-        "JS Assignment",
-        "Unknown Yet",
+        "MAZE - JS Game Assignment",
+        "Find the exit of a maze",
         new SimpleDate(21, 3, 2026),
         "./work/js_assignment/index.html"
     ),
