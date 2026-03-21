@@ -237,7 +237,7 @@ const items = [ // Work Items
     new Work(
         "JS Assignment",
         "Unknown Yet",
-        new SimpleDate(0, 0, 0),
+        new SimpleDate(21, 3, 2026),
         "./work/js_assignment/index.html"
     ),
 
