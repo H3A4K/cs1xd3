@@ -241,6 +241,20 @@ const items = [ // Work Items
     ),
 
     new Work(
+        "Passwords (Lab 11.1.1)",
+        "Validates password strength",
+        new SimpleDate(23, 3, 2026),
+        "./work/Labs/11.1/passwords/index.html"
+    ),
+
+    new Work(
+        "AJAX Database Fetch (Lab 11.1.2)",
+        "Fetches then displays the contents of a database",
+        new SimpleDate(23, 3, 26),
+        "./work/Labs/11.1/database_display/index.html"
+    ),
+
+    new Work(
         "The Goober Development Group",
         "CS 1XD3 course team page",
         new SimpleDate(1, 2, 2026),
