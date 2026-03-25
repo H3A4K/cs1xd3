@@ -4,3 +4,6 @@
 [submodule "work/js_assignment"]
 	path = work/js_assignment
 	url = https://github.com/H3A4K/JS_Assignment.git
+[submodule "work/team_assignment"]
+	path = work/team_assignment
+	url = https://github.com/H3A4K/team_assignment_1XD3.git

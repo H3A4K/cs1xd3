@@ -14,11 +14,18 @@ window.addEventListener("load", function() {
     function success(text) {
         // console.log(text);
         output.innerHTML = text;
+        button.disabled = false;
+    }
+
+    function waiting() {
+        button.disabled = true;
+
     }
 
     button.addEventListener("click", function() {
         const url = "cities.php?min=" + min.value + "&max=" + max.value;
-        console.log(url);
+        // console.log(url);
+        waiting();
         fetch(url)
             .then(respone => respone.text())
             .then(success);

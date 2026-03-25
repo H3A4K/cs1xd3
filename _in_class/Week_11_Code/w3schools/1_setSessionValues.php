@@ -17,7 +17,7 @@ session_start();
 <body>
     <?php
     // Set session variables
-    $_SESSION["favcolor"] = "green";
+    $_SESSION["favcolor"] = "green"; // superglobal var
     $_SESSION["favanimal"] = "cat";
     echo "Session variables are set.";
     ?>
