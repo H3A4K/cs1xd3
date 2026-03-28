@@ -7,3 +7,6 @@
 [submodule "work/team_assignment"]
 	path = work/team_assignment
 	url = https://github.com/H3A4K/team_assignment_1XD3.git
+[submodule "work/php_assignment"]
+	path = work/php_assignment
+	url = https://github.com/H3A4K/php_assignment.git
