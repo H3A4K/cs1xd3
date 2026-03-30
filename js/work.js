@@ -241,7 +241,7 @@ const items = [ // Work Items
     ),
 
     new Work(
-        "Passwords (Lab 11.1.1)",
+        "Passwords (Lab 11.1.1 & 3)",
         "Validates password strength",
         new SimpleDate(23, 3, 2026),
         "./work/Labs/11.1/passwords/index.html"
@@ -252,6 +252,27 @@ const items = [ // Work Items
         "Fetches then displays the contents of a database",
         new SimpleDate(23, 3, 26),
         "./work/Labs/11.1/database_display/index.html"
+    ),
+
+    new Work(
+        "Guessing Game (Lab 12.1.1)",
+        "Has the user guess a number based on a range they've provided",
+        new SimpleDate(30, 3, 26),
+        "./work/Labs/12.1/guessing_game/"
+    ),
+
+        new Work(
+        "Slot machine pt.2 (With AJAX) (Lab 12.1.2)",
+        "Gives the user 10 credits, adds 8 on getting all 3 fruits the same, and 2 for getting 2 fruits the same",
+        new SimpleDate(30, 3, 26),
+        "./work/Labs/12.1/slot.2/"
+    ),
+
+    new Work(
+        "MAZE 2 - PHP Game Assignment",
+        "Find the exit of a maze",
+        new SimpleDate(1, 3, 2026),
+        "./work/php_assignment/index.php"
     ),
 
     new Work(
