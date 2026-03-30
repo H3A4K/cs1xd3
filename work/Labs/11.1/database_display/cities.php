@@ -20,5 +20,5 @@ try {
     }
     echo "</table>";
 } catch (Exception $e) {
-    echo -1;
+    echo "";
 }
