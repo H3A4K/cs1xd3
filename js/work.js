@@ -276,6 +276,13 @@ const items = [ // Work Items
     ),
 
     new Work(
+        "Clarence's Kitchen - Team Assignment",
+        "",
+        new SimpleDate(1, 2, 2026),
+        "./work/team_assignment_1XD3/"
+    ),
+
+    new Work(
         "The Goober Development Group",
         "CS 1XD3 course team page",
         new SimpleDate(1, 2, 2026),

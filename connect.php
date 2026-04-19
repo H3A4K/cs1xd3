@@ -10,7 +10,7 @@ try {
     $dbh = new PDO(
         "mysql:host=localhost;dbname=perlocka_db",
         "root", // perlocka_local
-        "" // {FmD,8Pe
+        "" //   
     );
 } catch (Exception $e) {
     die("ERROR: Couldn't connect. {$e->getMessage()}");
