@@ -10,3 +10,6 @@
 [submodule "work/team_assignment_1XD3"]
 	path = work/team_assignment_1XD3
 	url = git@github.com:H3A4K/team_assignment_1XD3.git
+[submodule "team_assignment_1XD3"]
+	path = team_assignment_1XD3
+	url = https://github.com/H3A4K/team_assignment_1XD3.git

@@ -279,7 +279,7 @@ const items = [ // Work Items
         "Clarence's Kitchen - Team Assignment",
         "",
         new SimpleDate(1, 2, 2026),
-        "./work/team_assignment_1XD3/"
+        "./team_assignment_1XD3/"
     ),
 
     new Work(
